@@ -203,6 +203,10 @@ Note: When starting LocalStack via `lstk` (or the `localstack` CLI), prefix envi
 - PostgreSQL connections on the gateway port are detected by their protocol handshake. Running this extension together with another extension that serves PostgreSQL on the gateway (e.g., ParadeDB) is not supported.
 - The clone ports are published on the host, so they must not be in use by another database.
 
+## Future: Brancher-backed RDS snapshots / clones
+
+Design plan (not implemented yet): use Baseshift Brancher for LocalStack RDS-like snapshot/branch/clone behavior — see [`docs/brancher-rds-plan.md`](docs/brancher-rds-plan.md).
+
 ## Demo
 
 The [`demo/`](demo/) directory contains an end-to-end demo of masked production data flowing through a local pipeline: a "production" database in LocalStack RDS, a masked snapshot image in LocalStack ECR, a clone started via this extension, and an ELT pipeline into the LocalStack Snowflake emulator.
